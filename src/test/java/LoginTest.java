@@ -98,13 +98,13 @@ public class LoginTest {
         WebElement loginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Log in']")));
         loginButton.click();
 
-        // 5. Check user was not logged in
+        // 6. Check user was not logged in
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String alertText = alert.getText();
         Assert.assertTrue(alertText.contains("User does not exist."));
         alert.accept();
 
-        // 6. Check Login button is displayed
+        // 7. Check Login button is displayed
         WebElement homeLoginButton2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login2")));
         Assert.assertTrue(homeLoginButton2.isDisplayed());
     }
