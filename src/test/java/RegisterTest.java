@@ -1,3 +1,6 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,11 +10,18 @@ import java.time.Duration;
 import java.util.Random;
 
 public class RegisterTest {
-    public void registerUserWithValidCredentials(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    WebDriver driver;
 
+    @Before
+    public void initDriver() {
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demoblaze.com/index.html");
+    }
+
+        @Test
+    public void registerUserWithValidCredentials(){
         Random random = new Random();
         int min = 0;
         int max = 9;
@@ -24,25 +34,27 @@ public class RegisterTest {
         randoms.append(num3);
         String registerUsername = "my_test" + randoms;
         String registerPassword = "bla1711#";
-        // 1. Go to the website
-        driver.get("https://demoblaze.com/index.html");
 
-        // 2. Click on SignUp button
+        // 1. Click on SignUp button
         WebElement signUpButton = driver.findElement(By.id("signin2"));
         signUpButton.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-        // 3. Insert SignUp username
+        // 2. Insert SignUp username
         WebElement usernameInput = driver.findElement(By.id("sign-username"));
         usernameInput.clear();
         usernameInput.sendKeys(registerUsername);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-        // 4. Insert SignUp Password
+        // 3. Insert SignUp Password
         WebElement passwordInput = driver.findElement(By.id("sign-password"));
         passwordInput.clear();
         passwordInput.sendKeys(registerPassword);
 
+    }
+
+    @After
+    public void tearDown(){
         driver.close();
     }
 }
