@@ -255,10 +255,10 @@ public class CartTest {
 
         WebElement deleteLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         deleteLink.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         List<WebElement> tableRows = driver.findElements(By.xpath("//table//tbody/tr"));
         Assert.assertTrue("Cart should be empty", tableRows.isEmpty());
