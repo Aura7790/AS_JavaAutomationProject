@@ -144,8 +144,8 @@ public class CartTest {
         // 5. Delete the items from cart
         WebElement deleteLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         WebElement cartTable = driver.findElement(By.id("tbodyid"));
@@ -205,8 +205,8 @@ public class CartTest {
         // 4. Delete the items from cart
         WebElement deleteLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         WebElement cartTable = driver.findElement(By.id("tbodyid"));
@@ -255,8 +255,8 @@ public class CartTest {
 
         WebElement deleteLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Delete")));
         deleteLink.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
