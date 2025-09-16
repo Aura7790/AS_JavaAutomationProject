@@ -7,10 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.SQLOutput;
 import java.time.Duration;
 
-public class ProductDetailsTest {
+public class ProductDetailsTests {
     WebDriver driver;
     WebDriverWait wait;
 

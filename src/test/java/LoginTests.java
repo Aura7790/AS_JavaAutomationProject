@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
 
 
-public class LoginTest {
+public class LoginTests {
     WebDriver driver;
     WebDriverWait wait;
     String loginUsername = "bla171";

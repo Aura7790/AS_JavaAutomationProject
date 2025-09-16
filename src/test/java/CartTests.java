@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartTest {
+public class CartTests {
     WebDriver driver;
     WebDriverWait wait;
     String loginUsername = "bla171";
